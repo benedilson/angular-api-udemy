@@ -9,29 +9,12 @@ import { Usuario } from '../usuario';
 })
 export class UsuarioComponent implements OnInit {
 
-  public usuarios: Usuario[] = [
-    {
-      nome: "abc",
-      email: "abc@teste.com.br"
-    },
-    {
-      nome: "def",
-      email: "def@teste.com.br"
-    },
-    {
-      nome: "ghi",
-      email: "ghi@teste.com.br"
-    },
-    {
-      nome: "jkl",
-      email: "jkl@teste.com.br"
-    }
-  ]
+  public usuarios: Usuario[]
 
   constructor(private usuarioService:UsuarioService) {}
 
   ngOnInit() {
-
+    this.usuarios = this.usuarioService.listaUsuario()
   }
 
 }
